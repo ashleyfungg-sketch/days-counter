@@ -4,16 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Days Counter</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            background-image: url('image.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: 'Apple Chancery', cursive; /* Font style */
+        }
+
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f35e90; /* Pink color */
+            font-size: 7em; /* Font size */
+            font-weight: bold;
+            /* Remove text shadow */
+        }
+
+        #days-counter {
+            position: absolute;
+            top: calc(10% - 1.9em); /* Adjust vertical position */
+            /* Add text outline effect */
+            color: #f35e90;
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="overlay">
-            <span class="text-before">第</span>
-            <span id="days-counter">0</span>
-            <span class="text-after">天</span>
-        </div>
+        <div id="days-counter">0</div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const daysCounter = document.getElementById('days-counter');
+
+            const startDate = new Date('2024-04-06');
+            const today = new Date();
+            const timeDifference = today - startDate;
+            const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+            daysCounter.textContent = daysDifference;
+        });
+    </script>
 </body>
 </html>
