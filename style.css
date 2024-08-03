@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 640px;
+    background-image: url('image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.text-before, .text-after {
+    font-size: 2em;
+}
+
+#days-counter {
+    font-size: 2em;
+    color: red;
+    margin: 0 10px;
+}
